@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -42,6 +43,7 @@ Future<void> getPopularMovies() async {
   final response = await http.get(Uri.parse(popular));
   if (response.statusCode == 200) {
     var tempData = jsonDecode(response.body);
+    
     var popularMovies = tempData['results'];
     for (int i = 0; i < popularMovies.length; i++) {
       popularMoviesList.add({
@@ -79,22 +81,27 @@ Future<void> getToprated() async {
   }
 }
 
-Future<void> getAllmovies() async {
-  final response = await http.get(Uri.parse(allmoveis));
-  if (response.statusCode == 200) {
-    var tempdata = jsonDecode(response.body);
-    List allmovies = tempdata['results'];
-    for (var i = 0; i < allmovies.length; i++) {
-      allMoviesList.add({
-        'title': allmovies[i]['title'],
-        'backdrop_path': allmovies[i]['backdrop_path'],
-        'overview': allmovies[i]['overview'],
-        'vote_average': allmovies[i]['vote_average'],
-        'release_date': allmovies[i]['release_date'],
-        'poster_path': allmovies[i]['poster_path'],
-      });
-    }
-  } else {
-    throw Exception('error loading all movies');
-  }
-}
+// Future<void> getAllmovies() async {
+//   final response = await http.get(Uri.parse(allmoveis));
+//   if (response.statusCode == 200) {
+//     var tempdata = jsonDecode(response.body);
+//     List allmovies = tempdata['results'];
+//     for (var i = 0; i < allmovies.length; i++) {
+//       allMoviesList.add({
+//         'title': allmovies[i]['title'],
+//         'backdrop_path': allmovies[i]['backdrop_path'],
+//         'overview': allmovies[i]['overview'],
+//         'vote_average': allmovies[i]['vote_average'],
+//         'release_date': allmovies[i]['release_date'],
+//         'poster_path': allmovies[i]['poster_path'],
+//       });
+//     }
+//   } else {
+//     throw Exception('error loading all movies');
+//   }
+// }
+
+
+
+
+

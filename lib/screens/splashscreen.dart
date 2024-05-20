@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     nowPlaying();
     getPopularMovies();
-    getAllmovies();
+    //getAllmovies();
     getToprated();
     super.initState();
     

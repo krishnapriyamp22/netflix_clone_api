@@ -12,7 +12,9 @@
   String toprated =    'https://api.themoviedb.org/3/movie/top_rated?api_key=266ad97c9804e00bc2685dcb506d9e37';
 
   String upcoming =
-    'https://api.themoviedb.org/3/movie/upcoming?api_key=266ad97c9804e00bc2685dcb506d9e37';
+     'https://api.themoviedb.org/3/movie/upcoming?api_key=$apikey';
 
-  String allmoveis =
-    'https://api.themoviedb.org/3/movie/upcoming?api_key=266ad97c9804e00bc2685dcb506d9e37';
+
+  
+  String searchurl="https://api.themoviedb.org/3/search/movie?query=Jack+Reacher&api_key=$apikey";
+
